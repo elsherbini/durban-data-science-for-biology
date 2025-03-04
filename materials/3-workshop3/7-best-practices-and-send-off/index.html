@@ -385,7 +385,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#slides" id="toc-slides" class="nav-link active" data-scroll-target="#slides">Slides</a>
+  <li><a href="#bioinformatics-is-a-journey" id="toc-bioinformatics-is-a-journey" class="nav-link active" data-scroll-target="#bioinformatics-is-a-journey">Bioinformatics is a journey</a>
   <ul class="collapse">
   <li><a href="#vscode" id="toc-vscode" class="nav-link" data-scroll-target="#vscode">VSCode</a></li>
   <li><a href="#snakemake" id="toc-snakemake" class="nav-link" data-scroll-target="#snakemake">Snakemake</a></li>
@@ -419,10 +419,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <blockquote class="blockquote">
 <p>Say goodbye to the workshop and reflect on your new-found superpowers</p>
 </blockquote>
-<section id="slides" class="level2">
-<h2 class="anchored" data-anchor-id="slides">Slides</h2>
-<p><a href="../../../materials/3-workshop3/7-best-practices-and-send-off/slides.html">Make slides full screen</a></p>
-<iframe class="slide-deck" src="slides.html" height="420" width="747" style="border: 1px solid #2e3846;"></iframe>
+<section id="bioinformatics-is-a-journey" class="level2">
+<h2 class="anchored" data-anchor-id="bioinformatics-is-a-journey">Bioinformatics is a journey</h2>
+<p>This week we spent a lot of times building the foundations of bioinformatics. Specifically, we interacted a lot with the UNIX shell and installed and ran bioinformatic programs interactively. However, in your work it will be really useful to switch from running things interactively to running things with scripts and pipelines. In this section we will talk about how to use VSCode, a text editor, to connect to remote servers and edit files directly there, and to use its terminal emulator in combination with the text editor to be efficient. We will also talk about <code>Snakemake</code>, a tool for making pipelines as an alternative to shell scripting.</p>
 <section id="vscode" class="level3">
 <h3 class="anchored" data-anchor-id="vscode">VSCode</h3>
 <p>VSCode is a code text editor application that provides an easy-to-use interface for viewing and writing code/scripts. This section will detail how to 1) install VSCode as an application on your computer, 2) install VSCode extensions and 3) setup launching VSCode as an interface to view and edit your files on the O2 cluster.</p>
@@ -459,7 +458,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>Press the bottom left purple icon to ‘Open a Remote Window’. This will prompt a few options to be displayed at the top near the search bar <img src="./images/remote_ssh_launch_step1.png" class="img-fluid" style="width:90.0%"></p></li>
 <li><p>Select ‘Add New SSH Host’ and then input the following and enter</p></li>
 </ol>
-<div id="53b3e583" class="cell" data-execution_count="1">
+<div id="5e4158d4" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">##| eval: false</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>user_name<span class="op">&gt;@&lt;</span>server address<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -476,7 +475,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ol type="1">
 <li>Generate SSH key on your own computer’s terminal with the following command. When prompted for file name, press enter to use the default file name. Enter a passphrase to protect your SSH keys.</li>
 </ol>
-<div id="0dfd7c9d" class="cell" data-execution_count="2">
+<div id="2a3b717f" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">##| eval: false</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co">## input this line into your computer's terminal</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>ssh<span class="op">-</span>keygen <span class="op">-</span>t rsa</span>
@@ -495,7 +494,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li>Linux or Mac:</li>
 </ul>
-<div id="60cd054c" class="cell" data-execution_count="3">
+<div id="e07e5eb2" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">##| eval: false</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co">## input this line into your computer's terminal</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>ssh<span class="op">-</span>copy<span class="op">-</span><span class="bu">id</span> <span class="op">-</span>i $HOME<span class="op">/</span>.ssh<span class="op">/</span>id_rsa.pub <span class="op">&lt;</span>user_name<span class="op">&gt;@&lt;</span>server address<span class="op">&gt;</span></span>
@@ -504,7 +503,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li>Windows:</li>
 </ul>
-<div id="21603926" class="cell" data-execution_count="4">
+<div id="d1abc534" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">##| eval: false</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co">## input this line into your computer's terminal</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>Get<span class="op">-</span>Content <span class="st">"$env:USERPROFILE\.ssh\id_rsa.pub"</span> <span class="op">|</span> ssh <span class="op">&lt;</span>user_name<span class="op">&gt;@&lt;</span>server address<span class="op">&gt;</span> <span class="st">"mkdir -p ~/.ssh &amp;&amp; cat &gt;&gt; ~/.ssh/authorized_keys"</span></span>
@@ -515,8 +514,71 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="snakemake" class="level3">
 <h3 class="anchored" data-anchor-id="snakemake">Snakemake</h3>
 <p>We could (and should!) do a whole workshop on using Snakemake for bioinformatics pipelines.</p>
-<p>For now, take a look at their excellent documentation here: (https://snakemake.readthedocs.io/en/stable/index.html)[https://snakemake.readthedocs.io/en/stable/index.html]</p>
+<p>For now, take a look at their excellent documentation here: <a href="https://snakemake.readthedocs.io/en/stable/index.html">https://snakemake.readthedocs.io/en/stable/index.html</a></p>
 <p>And consider that AI tools are quite good at snakemake.</p>
+<p>Here are the files we created during the live demo of Snakemake:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Snakefile</strong></pre>
+</div>
+<div class="sourceCode" id="cb5" data-filename="Snakefile"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ex">rule</span> target:</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">input:</span> <span class="st">"results/iqtree_tree.treefile"</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="ex">rule</span> combine_reference:</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="ex">input:</span> </span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>        <span class="ex">query_genomes</span> = <span class="st">"input/sequences_20250228_9489868.fasta"</span>,</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>        <span class="ex">reference_genome</span> = <span class="st">"input/hxb2.fasta"</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    <span class="ex">output:</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>        <span class="st">"temp/combined_genomes.fasta"</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    <span class="ex">shell:</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>        <span class="st">"cat {input.query_genomes} {input.reference_genome} &gt; {output}"</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="ex">rule</span> align:</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>    <span class="ex">input:</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>        <span class="st">"temp/combined_genomes.fasta"</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>    <span class="ex">output:</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>        <span class="st">"temp/aligned.fasta"</span></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>    <span class="ex">conda:</span></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>        <span class="st">"envs/mafft.yaml"</span> </span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>    <span class="ex">shell:</span></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>        <span class="st">"mafft {input} &gt; {output}"</span></span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a><span class="ex">rule</span> build_tree:</span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>    <span class="ex">input:</span></span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>        <span class="st">"temp/aligned.fasta"</span></span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>    <span class="ex">output:</span></span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>        <span class="st">"results/iqtree_tree.treefile"</span>  <span class="co"># IQ-TREE output file</span></span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>    <span class="ex">conda:</span></span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a>        <span class="st">"envs/iqtree.yaml"</span>  <span class="co"># Path to the IQ-TREE Conda environment file</span></span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>    <span class="ex">shell:</span></span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a>        <span class="st">"iqtree2 -s {input} -m MFP -nt 4"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>envs/iqtree.yaml</strong></pre>
+</div>
+<div class="sourceCode" id="cb6" data-filename="envs/iqtree.yaml"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">name:</span> iqtree_env</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ex">channels:</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="ex">-</span> bioconda</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="ex">-</span> conda-forge</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="ex">-</span> defaults</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="ex">dependencies:</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  <span class="ex">-</span> iqtree</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>envs/mafft.yaml</strong></pre>
+</div>
+<div class="sourceCode" id="cb7" data-filename="envs/mafft.yaml"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">name:</span> mafft_env</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="ex">channels:</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="ex">-</span> bioconda</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="ex">-</span> conda-forge</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="ex">-</span> defaults</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="ex">dependencies:</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  <span class="ex">-</span> mafft</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
 <section id="ai-tools-in-2025" class="level3">
 <h3 class="anchored" data-anchor-id="ai-tools-in-2025">AI tools in 2025</h3>
