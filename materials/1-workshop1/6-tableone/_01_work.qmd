@@ -1,0 +1,142 @@
+# Workshop
+
+## Packages
+
+```{r}
+library(here)
+require(tidyverse)  #installed for data manipulation and exploration
+require(data.table) #installed for %like% function
+require(janitor)    #data cleaning *presets
+library(tableone)
+library(flextable)
+library(labelled)
+library(officer)
+```
+
+```{r,include=FALSE}
+source('functions/added_functions.R')
+```
+
+```{r,include=FALSE}
+source('functions/dt_pipeline.R')
+```
+
+## Working with a real dataset
+
+## Creating baseline measurements dataset
+
+```{r mergealldataset}
+dt_baseline<-
+  #get baseline sample identifier from the sample_ids dataset
+  dt_sample_ids%>%
+    relocate(pid,sample_id)%>%
+    filter(time_point=='baseline')%>%
+    arrange(pid)%>%#join metadata dataset
+  left_join(
+    dt_participant_metadata%>%
+      mutate(sex=ifelse(
+        sex==F,'Female','Male'
+      ))
+    )%>% #joining clinical measurements dataset----
+  left_join(
+    dt_visit_clinical_measurements
+    )%>% # manipulating and joining elisa_cytokine dataset----
+  left_join(
+    dt_elisa_cytokines%>%
+      select(-limits)%>%
+      spread(cytokine,conc)%>%#you can also use pivot
+    clean_names()
+    )%>% #joining flow cytometry dataset----
+  left_join(
+    dt_flow_cytometry
+    )
+```
+
+```{r}
+head(dt_baseline,2)
+```
+
+## Generate missing data (for illustration)
+
+```{r generate_missing_value}
+# Generate missing data
+dt_baseline_wm<-
+  func_generate_missing_values(
+    func_generate_missing_values(
+      data=dt_baseline,
+      column_name=c('il_10'),
+      percentage=5),
+    column_name=c('education'),
+    percentage=5)
+```
+
+```{r}
+head(dt_baseline,2)
+```
+
+## Get a subset
+
+```{r}
+# -column names of the full dataset
+dt.names<-names(dt_baseline)
+# -get a subset
+dt_baseline<-dt_baseline [4:14] #get what you need 
+dt_names<-names(dt_baseline)
+# -structure of the dataset
+dt_structure<-names(dt_baseline)
+```
+
+## Results
+
+```{r}
+length(dt.names);dt.names
+length(dt_names);dt_names
+```
+
+## Table One without strata
+::: {.panel-tabset}
+
+## `CreatTableOne` function
+```{r}
+
+variables<-names(dt_baseline)
+
+TABLEONE<-CreateTableOne(
+        data=dt_baseline,
+        vars=variables,
+        addOverall = T,
+        includeNA = F
+      )
+```
+
+## `print function for `CreatTableOne` object
+```{r}
+TABLEONE.01<-
+  as.data.frame(
+    print(
+      TABLEONE
+    )
+  )
+```
+
+## `print function options
+```{r}
+TABLEONE.01<-
+  as.data.frame(
+    print(
+      TABLEONE,
+      #nonnormal = NULL,
+      #varLabels = F,
+      #missing = T,
+      #dropEqual = F,
+      #minMax = F,
+      #showAllLevels = T,
+      #cramVars = F,
+      #printToggle = F,
+      #catDigits = 1,
+      #contDigits = 1
+    )
+  )
+```
+
+:::

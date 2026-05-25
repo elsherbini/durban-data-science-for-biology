@@ -1,0 +1,124 @@
+
+\
+
+## Introduction
+
+In biomedical research, it is often necessary to compare the effects of different interventions or exposures on the health outcomes of interest. 
+However, before making any causal inference, it is important to evaluate the baseline characteristics of the patients who participate in the study. 
+Baseline characteristics are the demographic and clinical features of the participants at the start of a trial or a study, such as age, sex, disease severity, comorbidities, etc. 
+They provide information about the population that is being studied and the context of the research question (Schulz, Altman, & Moher, 2010).
+
+Evaluating baseline characteristics of patients in different treatment groups is important for several reasons:
+
+- It allows readers to assess the external validity of the trial results, which is the extent to which the results can be generalised to other settings and populations. For example, if the trial participants are very different from the target population in terms of age, sex, or other factors that may affect the outcome, then the results may not be applicable to the target population (Altman, 1990).
+- It allows researchers to check the internal validity of the trial results, which is the extent to which the results are free from bias and confounding. Bias is a systematic error that leads to a deviation from the true effect of the intervention or exposure. Confounding is a situation where a third variable is associated with both the intervention or exposure and the outcome, and may distort the true effect of the intervention or exposure. For example, if the treatment groups are not balanced in terms of baseline characteristics that may influence the outcome, then there may be a bias or a confounding effect that needs to be adjusted for in the statistical analysis (Matthews, 2006).
+- It allows researchers to explore the heterogeneity of the treatment effect, which is the variation in the effect across different subgroups of participants. Heterogeneity can be due to biological, clinical, or methodological factors that may modify or interact with the intervention or exposure. For example, if the treatment effect differs by age, sex, or disease severity, then it may be useful to perform subgroup analyses to identify which subgroups benefit more or less from the intervention or exposure (Matthews, 2006).
+
+To evaluate baseline characteristics, researchers need to use appropriate methods of summarisation, comparison, and adjustment, depending on the type and distribution of the variables. Summarisation involves describing the distribution and characteristics of the variables using descriptive statistics such as means, standard deviations, medians, interquartile ranges, counts, and percentages. Comparison involves testing whether there are significant differences or associations between the groups or variables using statistical tests such as t-tests, chi-squared tests,
+Fisher's exact tests, and rank sum tests. Adjustment involves controlling for the potential confounding factors using methods such as stratification, matching, covariate adjustment, or weighting (Altman, 1990).
+
+## Types of variables
+### Continuous
+Continuous variables are variables that can take any numeric value within a range, such as age, weight, height, blood pressure, etc. 
+They are usually measured or calculated using a scale or a device.
+
+
+### Categorical
+Categorical variables are variables that can take only a limited number of values, such as sex, race, diagnosis, treatment group, etc. 
+They are usually assigned or observed based on some criteria or classification.
+
+## Descriptive statistics
+Descriptive statistics are numerical summaries that describe the distribution and characteristics of a variable. 
+They include measures of central tendency (such as mean, median, mode), measures of variability (such as standard deviation, interquartile range, range), and measures of frequency (such as count, percentage, proportion).
+
+### Mean
+The mean is the sum of all the values in a data set divided by the number of values. The formula is:
+
+$$\bar{x} = \frac{\sum x}{n}$$
+
+where $\bar{x}$ is the mean, $\sum x$ is the sum of all the values, and $n$ is the number of values.
+
+### Median
+The median is the middle value in an ordered data set. To find the median, arrange the values from smallest to largest and then locate the middle one. If there are an even number of values, the median is the average of the two middle ones. The formula is:
+
+$$\tilde{x} = \begin{cases}
+x_{(n+1)/2}, & \text{if } n \text{ is odd} \\
+\frac{x_{n/2} + x_{(n/2)+1}}{2}, & \text{if } n \text{ is even}
+\end{cases}$$
+
+where
+
+- $\tilde{x}$ is the median, 
+- $x_i$ is the $i$th value in the ordered data set, and 
+- $n$ is the number of values.
+
+### Mode
+
+The mode is the most frequent value in a data set. There can be more than one mode if there are multiple values with the same frequency.
+There is no formula for the mode, but it can be found by counting how many times each value or category occurs and then selecting the one(s) with the highest frequency.
+
+### Standard deviation  
+
+The variance is a measure of how much the values vary from the mean while the standard deviation is a measure of how spread out the values are from the mean. 
+It is calculated by taking the square root of the variance. The formula is:
+
+$$s = \sqrt{\frac{\sum (x - \bar{x})^2}{n-1}}$$
+
+where
+
+- $s$ is the standard deviation,
+- $x$ is a value in the data set,
+- $\bar{x}$ is the mean, and 
+- $n$ is the number of values.
+
+### Count
+The count is the number of times a value or a category occurs in a data set. There is no formula for the count, but it can be found by counting how many times each value or category appears in the data set.
+
+### Percentage
+The proportion is the ratio of a part to the whole expressed as a fraction between 0 and 1 whereas the percentage is the ratio of a part to the whole expressed as a fraction of 100. The formula is:
+
+$$p = \frac{n}{N} \times 100$$
+
+where 
+
+- $p$ is the percentage,
+- $n$ is the count of a value or a category, and 
+- $N$ is the total count of all values or categories.
+
+These are some of the basic formulas for descriptive statistics. 
+You can find more information and examples on [this website](https://www.statisticshowto.com/probability-and-statistics/descriptive-statistics/).
+
+## Types of statistical tests
+One way to expand the sentence on baseline characteristics of patients in biomedical research papers is:
+
+Statistical tests are methods to evaluate whether there is a significant difference or association between two or more groups or variables. They are often used to compare the baseline characteristics of patients in different treatment groups, such as intervention and control groups, in biomedical research papers (Altman, 1990). They usually involve calculating a test statistic, which is a numerical value that summarizes the strength and direction of the relationship between the groups or variables. Then they compare the test statistic with a critical value or a p-value, which are thresholds that indicate the level of significance of the test. The level of significance is the probability of obtaining a test statistic as extreme or more extreme than the observed one, if the null hypothesis of no difference or no association is true. If the test statistic exceeds the critical value or is lower than the p-value, then the null hypothesis can be rejected and the alternative hypothesis of a difference or an association can be accepted. Otherwise, the null hypothesis cannot be rejected and the alternative hypothesis cannot be accepted.
+
+Depending on the type and distribution of the variables, different statistical tests can be performed. For continuous variables, such as age, weight, height, blood pressure, etc., t-tests (for normally distributed data) or rank sum tests (for non-normally distributed data) can be performed. T-tests compare the means of two groups and assume that the data are normally distributed and have equal variances. Rank sum tests compare the medians of two groups and do not assume any distribution or variance equality (Altman, 1990). For categorical variables, such as sex, race, diagnosis, treatment group, etc., chi-squared tests (for large sample sizes) or Fisher's exact tests (for small sample sizes) can be performed. Chi-squared tests compare the frequencies or proportions of two or more groups and assume that the expected frequencies are sufficiently large. Fisher's exact tests compare the frequencies or proportions of two groups and do not assume any frequency requirement (Altman, 1990).
+
+Another aspect that can be considered when comparing baseline characteristics is the standardized mean difference (SMD), It is a unitless measure that can be used to compare the magnitude of group differences across different variables. It can also be used to combine results from different studies that measure the same outcome but use different scales (Schulz, Altman, & Moher, 2010).
+
+## `tableone` package
+### Introduction
+R package ``tableone`` is a package by Yoshida & Victorina (2021) that eases the construction of “Table 1: Baseline demographics and clinical characteristics”. The package can handle both continuous and categorical variables, and provide descriptive statistics such as means, standard deviations, medians, interquartile ranges, counts, and percentages. It can also perform statistical tests to compare groups, such as t-tests, chi-squared tests, Fisher’s exact tests, and rank sum tests. It can also calculate standardized mean differences to measure the effect size of group differences. `tableone` can handle weighted data using the survey package, which allows researchers to account for complex sampling designs and adjust for confounding factors. `tableone` has a simple and flexible syntax, and can produce nice-looking tables using the kableone function.
+
+### How `tableone` works
+- To use `tableone`, you need to install it from CRAN or GitHub (Yoshida & Victorina, 2021).
+- You need to load the package using `library(`tableone`)`.
+- You need to specify the variables you want to summarize using the `vars` argument. You can also specify which variables are categorical using the `factorVars` argument.
+- You need to provide the data frame that contains the variables using the `data` argument. You can also provide a grouping variable using the `strata` argument.
+- You need to create a `tableone` object using the `Create`tableone`` function. This object contains all the summary statistics and test results for each variable and group.
+- You can print or export the `tableone` object using the `print` or `kableone` functions.
+
+### Other packages for creating tables
+Besides `tableone`, there are many other R packages that can be used to create tables in various output formats, such as PDF, HTML and Word. Some of them are: flextable (Gohel & Skintzos, 2023) and huxtable (Hugh-Jones, 2022).
+
+## References
+Altman, D. G. (1990). Practical statistics for medical research. Chapman & Hall/CRC.
+
+Matthews, J. N. (2006). Introduction to randomized controlled clinical trials. CRC Press.
+
+Schulz, K. F., Altman, D. G., & Moher, D.; CONSORT Group. (2010). CONSORT 2010 statement: updated guidelines for reporting parallel group randomised trials. BMJ, 340, c332.
+
+Therneau, T. M., & Grambsch, P. M. (2000). Modeling survival data: Extending the Cox model. Springer.
+
+Yoshida, K., & Victorina, L. K. (2021). `tableone`: An R package for creating 'Table 1'. R package version 0.12.0.
