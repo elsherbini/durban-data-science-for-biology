@@ -1,0 +1,26 @@
+---
+title: "Modeling and Uncertainty"
+format:
+  html:
+    toc: true
+---
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+library(here)
+library(tidyverse)
+```
+
+## Slides
+[Make slides full screen](slides.qmd)
+
+```{=html}
+<iframe class="slide-deck" src="slides.html" height="420" width="747" style="border: 1px solid #2e3846;"></iframe>
+```
+
+{{< include _01_pen_and_paper.qmd >}}
+
+{{< include _02_modeling_exercise.qmd >}}

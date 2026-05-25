@@ -1,0 +1,25 @@
+---
+format:
+  html:
+    code-link: true
+
+execute:
+  cache: true
+---
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+library(countdown)
+library(tidyverse)
+library(cowplot)
+library(colorspace)
+library(here)
+
+```
+
+## Coding exercise
+
+For this exercise we'll be using the instructional dataset. [Download the dataset here](../../../datasets.html).
