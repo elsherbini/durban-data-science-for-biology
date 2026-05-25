@@ -24,7 +24,7 @@ library(patchwork)
 library(modelsummary)
 library(survival)
 library(tidyverse)
-source(here("materials/1-workshop1/4.5-modeling/helpers.R"))
+source(here("materials/1-workshop1/5-modeling/helpers.R"))
 theme_set(theme_classic(base_size = 18))
 set.seed(202606)
 
